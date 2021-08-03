@@ -1,0 +1,37 @@
+<!-- templates/about/author.html -->
+{% extends "base.html" %}
+{% block title %}Об технологии проекта{% endblock %}
+{% block content %}
+  <div class="row">
+    <!-- Левый вспомогательный блок -->
+    <div class="col-md-3 mb-3 mt-1">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="h3">
+                Технологии
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="h6 text-muted">
+                <ul  type="disc">
+                  <li><a href="https://github.com/trdMichaelM/" target="_blank">Github</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Тело страницы -->
+    <div class="col-md-9">
+      <div class="card-body">
+        <div class="card-text">
+          <p><h3>Технологии</h3></p>
+          <P>Python 3.9 Django 2.2.19</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

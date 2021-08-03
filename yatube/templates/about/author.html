@@ -1,0 +1,40 @@
+<!-- templates/about/author.html -->
+{% extends "base.html" %}
+{% block title %}Об авторе проекта{% endblock %}
+{% block content %}
+  <div class="row">
+    <!-- Левый вспомогательный блок -->
+    <div class="col-md-3 mb-3 mt-1">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="h3">
+                Об авторе
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="h6 text-muted">
+                <ul  type="disc">
+                  <li><a href="https://github.com/trdMichaelM/" target="_blank">Github</a></li>
+                  <li><a href="https://vk.com/trdmichaelm" target="_blank">vk.com</a></li>
+                  <li><a href="https://www.facebook.com/trdMichaelM" target="_blank">Facebook</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Тело страницы -->
+    <div class="col-md-9">
+      <div class="card-body">
+        <div class="card-text">
+          {% load static %}
+          <img src="{% static 'img/me.jpg' %}">
+          <p>Здравствуйте, меня зовут Миша, мне 34 года и я ... программист.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
