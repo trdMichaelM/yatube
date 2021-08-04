@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Последние обновления{% endblock %}
-{% block header %}Последние обновления{% endblock %}
+{% block title %}Последние записи для {{ user.username }}{% endblock %}
+{% block header %}Последние записи для {{ user.username }}{% endblock %}
 {% block content %}
   {% include "menu.html" with index=False follow=True %}
   {% for post in page %}
