@@ -22,12 +22,13 @@ def index(request):
     if page_number is None:
         page_number = '1'
 
-    page = cache.get(page_number)
+    page_key = f'posts-index-page-cache-{page_number}'
+    page = cache.get(page_key)
     if page is None:
         posts = Post.objects.all()
         paginator = Paginator(posts, 10)
         page = paginator.get_page(page_number)
-        cache.set(page_number, page, timeout=20)
+        cache.set(page_key, page, timeout=20)
 
     return render(request, 'posts/index.html', {'page': page})
 
@@ -129,13 +130,8 @@ def add_comment(request, username, post_id):
 @login_required
 @require_GET
 def follow_index(request):
-    authors_id = []
     user = request.user
-    followers = user.follower.all()
-    for follower in followers:
-        authors_id.append(follower.author.id)
-
-    posts = Post.objects.filter(author__in=authors_id)
+    posts = Post.objects.filter(author__following__user=user)
     paginator = Paginator(posts, 10)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
