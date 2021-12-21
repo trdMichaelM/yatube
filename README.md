@@ -17,6 +17,10 @@ git clone git@github.com:trdMichaelM/yatube.git
 cd yatube
 ```
 
+```
+В корневой директории проекта файл .env.example переименовываем в .env и прописываем в нем SECRET_KEY
+```
+
 Cоздать и активировать виртуальное окружение:
 
 ```
