@@ -45,8 +45,7 @@ pip install -r requirements.txt
 Дополнительно установить модули django-debug-toolbar и dotenv:
 
 ```
-pip install django-debug-toolbar
-pip install python-dotenv 
+pip install django-debug-toolbar python-dotenv
 ```
 
 Выполнить миграции:
